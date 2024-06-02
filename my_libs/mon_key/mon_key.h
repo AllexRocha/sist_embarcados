@@ -1,5 +1,8 @@
 /*
-  mon_key.h
+  mon_key.h - library for monitoring keys and bounce handling on push buttons on Arduino
+  Author: Alex José Sousa da Rocha
+  Date: 26/05/2024
+
 */
 
 #ifndef mon_key
