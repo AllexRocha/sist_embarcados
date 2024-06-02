@@ -1,10 +1,13 @@
 /*
-  mon_key
+  Author: Alex José Sousa da Rocha
+  Date: 26/05/2024
+
 */
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include "C:\Users\alex\Documents\Cursos\sist_embarcados\arduino\mon_key\mon_key.h"
+#include "../mon_key.h"
+
 
 // Pin definitions
 #define LED_PIN PB3

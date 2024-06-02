@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
-#include "mon_key.h"
+#include <Arduino.h>
+#include "../../my_libs/mon_key/mon_key.h"
 
 #define LED_PIN PB3
 #define BUTTON_PIN_1 PB1
@@ -37,6 +38,7 @@ int main(void){
   //adicionando pull up nas entradas
   LED_PORT |= (1 << BUTTON_PIN_1);
   LED_PORT |= (1 << BUTTON_PIN_2);
+  Serial.begin(9600);
 
 
   while(1){
@@ -45,10 +47,12 @@ int main(void){
     buttonState2 = read_pin(BUTTON_PORT, BUTTON_PIN_2);
     res1 = m_key::mn_key(buttonState1, &PS1, &ES1);
     res2 = m_key::mn_key(buttonState2, &PS2, &ES2);
-    if (res1) {
-      if(count > 0){
+    // Print log
+    Serial.println(count);
+    if (res1 && (count > 0)) {
+    
         count--;
-      }
+      
         
         ES1 = 0;
     }
